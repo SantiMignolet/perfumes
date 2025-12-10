@@ -1,0 +1,49 @@
+/* Ícono del carrito */
+.bi-cart {
+font-size: 1.5rem; /* Cambia el tamaño según tus necesidades */
+margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
+
+/* Logo de la navbar */
+.navbar-logo {
+height: 60px;
+width: 60px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+/* Links de navegación */
+.navbar-nav .nav-link {
+font-size: 1.1em;
+font-weight: 500;
+color: #ffffff;
+}
+
+.navbar-nav .nav-link:hover {
+color: #ffffff !important; /* Cambia el color al pasar el ratón */
+}
+
+.navbar-nav .nav-link.active {
+color: #f8f9fa;
+}
+
+/* Items de la navbar */
+.navbar-nav .nav-item {
+margin-left: 15px;
+}
+
+/* Fondo del navbar */
+.custom-navbar {
+background-color: #1A1A1A;
+}
+
+/* Tipografía y altura del navbar */
+.navbar {
+font-family: 'Didot';
+height: 100px;
+}
+
+/* Asegurar que el nav ocupe todo el ancho */
+nav {
+width: 100%;
+}

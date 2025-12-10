@@ -1,0 +1,19 @@
+.promo-bar {
+  width: 100%;
+  background-color: #f8e1f4;
+  color: #333;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.promo-track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}

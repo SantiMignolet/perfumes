@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg custom-navbar shadow-sm">
+  <a class="navbar-brand ms-2" [routerLink]="['/inicio']">
+    <img src="assets/ChatGPT Image 29 jul 2025, 10_10_40 a.m..png" 
+         style="width: 150px; height: 150px; margin-left:15px;" 
+         alt="">
+  </a>
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto" style="margin-right: 150px;">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/productos']">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/ofertas']">Ofertas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/novedades']">Novedades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/nuestraempresa']">Nuestra Empresa</a>
+        </li>
+        <!-- ADMIN SOLO SI ES ADMIN -->
+        <li class="nav-item" *ngIf="rolUsuario === 'admin'">
+          <a class="nav-link active" routerLink="/admin">Admin</a>
+        </li>
+      </ul>
+
+```
+  <form class="d-flex ms-3">
+    <input class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Search">
+    <button class="btn btn-outline-light" type="submit">Buscar</button>
+  </form>
+
+  <ul class="navbar-nav ms-3">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/carrito']">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="badge bg-danger" *ngIf="cantidadProductos > 0">
+          {{ cantidadProductos }}
+        </span>
+      </a>  
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/favorito']">
+        <i class="fa-solid fa-heart"></i>
+      </a>
+    </li>
+    <!-- LOGIN SI NO ESTÁ LOGUEADO -->
+    <li class="nav-item inicio-sesion-nv" *ngIf="!isLogged">
+      <a class="nav-link" [routerLink]="['/iniciosesion']">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    </li>
+    <!-- CERRAR SESIÓN SI ESTÁ LOGUEADO -->
+    <li class="nav-item" *ngIf="isLogged">
+      <a class="nav-link text-danger" href="#" (click)="logout()">
+        <i class="fa-solid fa-right-from-bracket"></i> Cerrar
+      </a>
+    </li>
+  </ul>
+
+</div>
+```
+
+  </div>
+</nav>

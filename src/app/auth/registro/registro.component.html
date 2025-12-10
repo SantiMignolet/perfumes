@@ -1,0 +1,61 @@
+<div class="container mt-5" style="max-width: 420px;">
+  <h2 class="text-center mb-4 fw-bold">Crear cuenta</h2>
+
+  <form (ngSubmit)="registrar()">
+    <!-- Nombre -->
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre completo</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        class="form-control"
+        [(ngModel)]="nuevoUsuario.nombre"
+        required
+      />
+    </div>
+
+    <!-- Correo electrónico -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Correo electrónico</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        [(ngModel)]="nuevoUsuario.email"
+        required
+      />
+    </div>
+
+    <!-- Contraseña -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        [(ngModel)]="nuevoUsuario.password"
+        minlength="4"
+        required
+      />
+      <div class="form-text">Mínimo 4 caracteres.</div>
+    </div>
+
+    <!-- Botón -->
+    <div class="d-grid">
+      <button type="submit" class="btn btn-success">Crear cuenta</button>
+    </div>
+
+    <!-- Mensaje de error -->
+    <p *ngIf="error" class="text-danger text-center mt-3">
+      {{ error }}
+    </p>
+  </form>
+<div>
+  <br>
+  
+</div>
+  
+</div>

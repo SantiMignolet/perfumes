@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">🔥 Ofertas</h2>
+
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let producto of ofertas">
+      <div class="card shadow-sm">
+
+        <img
+          class="card-img-top"
+          [src]="'http://localhost/api_proyecto/public/uploads/' + producto.imagen"
+          alt="imagen del producto"
+        />
+
+        <div class="card-body">
+          <h5>{{ producto.nombre }}</h5>
+          <p>{{ producto.descripcion }}</p>
+
+          <p class="fw-bold text-success">
+            ${{ producto.precio }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

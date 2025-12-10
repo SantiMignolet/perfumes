@@ -1,0 +1,50 @@
+<div class="arrepentimiento-container">
+  <h1>Botón de Arrepentimiento</h1>
+
+  <form class="formulario" (submit)="enviarFormulario($event)">
+
+    <!-- NOMBRE -->
+    <div class="campo">
+      <label>Nombre</label>
+      <input 
+        type="text" 
+        placeholder="Ingresá tu nombre" 
+        [(ngModel)]="nombre"
+        name="nombre"
+        required
+      >
+      <p class="error" *ngIf="errorNombre"> El nombre es obligatorio.</p>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="campo">
+      <label>Email</label>
+      <input 
+        type="email" 
+        placeholder="Ingresá tu correo"
+        [(ngModel)]="email"
+        name="email"
+        required
+      >
+      <p class="error" *ngIf="errorEmail"> Ingresá un email válido.</p>
+    </div>
+
+    <!-- NUMERO DE COMPRA -->
+    <div class="campo">
+      <label>Número de compra</label>
+      <input 
+        type="text" 
+        placeholder="Ej: #123456"
+        [(ngModel)]="numeroCompra"
+        name="numeroCompra"
+        required
+      >
+      <p class="error" *ngIf="errorNumero"> El número de compra es obligatorio.</p>
+    </div>
+
+    <button class="btn-enviar">Enviar</button>
+
+    <p class="exito" *ngIf="enviado"> Formulario enviado correctamente.</p>
+
+  </form>
+</div>

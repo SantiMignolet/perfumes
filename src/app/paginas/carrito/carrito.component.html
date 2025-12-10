@@ -1,0 +1,75 @@
+<h1 class="text-center my-4">Carrito de Compras</h1>
+
+<div *ngIf="carrito.length === 0" class="alert alert-warning text-center">
+    <p>No hay productos en el carrito</p>
+</div>
+
+<div *ngIf="carrito.length > 0" class="container">
+
+    <table class="table table-hover table-bordered align-middle text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let item of carrito; let i = index">
+
+                <!-- IMAGEN -->
+                <td>
+                    <img
+                        [src]="item.imagen"
+                        alt="{{ item.nombre }}"
+                        class="img-thumbnail"
+                        style="width: 70px; height: 70px;"
+                    >
+                </td>
+
+                <!-- NOMBRE -->
+                <td class="fw-bold">{{ item.nombre }}</td>
+
+                <!-- DESCRIPCION -->
+                <td>{{ item.descripcion }}</td>
+
+                <!-- PRECIO -->
+                <td>${{ item.precio }}</td>
+
+                <!-- CANTIDAD -->
+                <td>
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-outline-danger btn-sm" (click)="quitarCantidad(i)">-</button>
+                        <span class="px-2">{{ item.cantidad }}</span>
+                        <button class="btn btn-outline-success btn-sm" (click)="agregarCantidad(i)">+</button>
+                    </div>
+                </td>
+
+                <!-- ELIMINAR -->
+                <td>
+                    <button
+                        class="btn btn-outline-danger btn-sm"
+                        (click)="eliminar(item.id_detalle_carrito)"
+                    >
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- TOTAL -->
+    <div class="text-end mt-4">
+        <h4 class="fw-bold">Total: {{ total }}</h4>
+
+        <button class="btn btn-primary mt-2" (click)="irACompra()">
+            <i class="bi bi-cart-check"></i> Realizar Compra
+        </button>
+    </div>
+
+</div>
