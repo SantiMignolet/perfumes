@@ -20,43 +20,35 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let item of carrito; let i = index">
+            <tr *ngFor="let item of carrito">
 
-                <!-- IMAGEN -->
+                <!-- Imagen -->
                 <td>
-                    <img *ngIf="item.imagen"
-                         [src]="'http://localhost/api_proyecto/public/uploads/' + item.imagen"
-                         class="thumb" />
+                    <img *ngIf="item.imagen" [src]="'http://localhost/api_proyecto/public/uploads/' + item.imagen"
+                        class="thumb" />
                 </td>
 
-                <!-- NOMBRE -->
-                <td class="fw-bold">{{ item.nombre }}</td>
-
-                <!-- DESCRIPCION -->
-                <td>{{ item.descripcion }}</td>
-
-                <!-- PRECIO -->
-              <td>${{ item.precio }}</td>
-
-
-                <!-- CANTIDAD -->
+                <!-- Nombre -->
                 <td>
-                    <div class="btn-group" role="group">
-                        <button class="btn btn-outline-danger btn-sm" (click)="quitarCantidad(i)">-</button>
-                        <span class="px-2">{{ item.cantidad }}</span>
-                        <button class="btn btn-outline-success btn-sm" (click)="agregarCantidad(i)">+</button>
-                    </div>
+                    <strong>{{ item.nombre }}</strong>
                 </td>
 
-                <!-- SUBTOTAL -->
+                <!-- Precio -->
+                <td>$ {{ item.precio_unitario }}</td>
+
+                <!-- Cantidad (editable) -->
+                <td>
+                    <input type="number" min="1" class="form-control" [value]="item.cantidad"
+                        (change)="cambiarCantidad(item.id_detalle_carrito, $event)">
+                </td>
+
+                <!-- Subtotal -->
                 <td>$ {{ item.subtotal }}</td>
 
-                <!-- ELIMINAR -->
+                <!-- Eliminar -->
                 <td>
-                    <button
-                        class="btn btn-outline-danger btn-sm"
-                        (click)="eliminar(item.id_detalle_carrito)">
-                        <i class="fa-solid fa-trash"></i>
+                    <button class="btn btn-danger btn-sm" (click)="eliminar(item.id_detalle_carrito)">
+                        Eliminar
                     </button>
                 </td>
 
@@ -64,13 +56,16 @@
         </tbody>
     </table>
 
-    <!-- TOTAL -->
     <div class="text-end mt-4">
-        <h4 class="fw-bold">Total: ${{ total }}</h4>
+        <p>Subtotal: <strong>$ {{ total }}</strong></p>
+        <p>Envío: <strong>$ {{ envio }}</strong></p>
+        <p>Total: <strong>$ {{ total + envio }}</strong></p>
 
-        <button class="btn btn-primary mt-2" (click)="irACompra()">
-            <i class="bi bi-cart-check"></i> Realizar Compra
+        <button class="btn btn-outline-danger me-2" (click)="vaciarCarrito()">
+            Vaciar carrito
         </button>
-    </div>
 
-</div>
+        <button class="btn btn-primary" (click)="irACompra()">
+            Finalizar compra
+        </button>
+    </div>  

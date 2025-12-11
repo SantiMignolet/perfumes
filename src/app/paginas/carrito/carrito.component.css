@@ -28,3 +28,41 @@ h2 {
     margin-top: 10px;
     /* Espacio encima de los botones */
 }
+.thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+input.form-control {
+    width: 70px;
+    margin: auto;
+}
+
+.btn {
+    min-width: 80px;
+}
+.thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+input.form-control {
+    width: 70px;
+    margin: auto;
+}
+
+.btn {
+    min-width: 80px;
+}

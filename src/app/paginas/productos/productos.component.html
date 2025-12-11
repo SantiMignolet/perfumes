@@ -3,29 +3,46 @@
 <div class="card-container justify-content-center">
 
   <ng-container *ngIf="productos && productos.length">
-    
+
     <ng-container *ngFor="let producto of productos">
 
       <div class="card">
 
-        <img [src]="'http://localhost/api_proyecto/public/uploads/' + producto.imagen" alt="{{ producto.nombre }}" class="product-image">
+        <img 
+          [src]="'http://localhost/api_proyecto/public/uploads/' + producto.imagen" 
+          alt="{{ producto.nombre }}" 
+          class="product-image"
+        >
 
         <div class="card-body">
+         
+
           <h2 class="card-title">{{ producto.nombre }}</h2>
+
           <p class="card-text">{{ producto.descripcion }}</p>
+
           <p class="card-price">Precio: {{ producto.precio }}</p>
-          <p *ngIf="producto.stock !== undefined">Stock: {{ producto.stock }}</p>
+
+          <p *ngIf="producto.stock !== undefined">
+            Stock: {{ producto.stock }}
+          </p>
 
           <div class="d-flex justify-content-center align-items-center">
-            
-            <button type="button" class="btn btn-outline-primary me-2"
-                    (click)="agregarAlCarrito(producto)">
+
+            <button
+              type="button"
+              class="btn btn-outline-primary me-2"
+              (click)="agregarAlCarrito(producto)"
+            >
               <i class="fa-solid fa-cart-plus"></i>
             </button>
 
-            <button type="button" class="btn btn-outline-danger"
-                    (click)="agregarAFavoritos(producto)">
-              <i class="fa-solid fa-heart"></i> 
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              (click)="agregarAFavoritos(producto)"
+            >
+              <i class="fa-solid fa-heart"></i>
             </button>
 
           </div>

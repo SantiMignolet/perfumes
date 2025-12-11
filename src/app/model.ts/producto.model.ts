@@ -4,9 +4,11 @@ export interface Producto {
   descripcion: string;
   precio: number;
   imagen: string;
-  stock: number;            // agregado
-  disponibilidad?: boolean; //  calculada desde stock
-  cantidad?: number;  
-  categoria:string, 
-  marca:string     //  carrito
+  stock: number;
+
+  // Opcionales
+  categoria?: string;
+  marca?: string;
+  disponibilidad?: boolean;
+  cantidad?: number;
 }

@@ -49,3 +49,69 @@ hr {
 .footer-bottom-link:hover {
   color: white;
 }
+.footer-nav {
+  background: #222;
+  color: white;
+  padding: 20px;
+  text-align: left; /* opcional */
+}
+
+.footer-nav h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  margin-bottom: 10px; /* separa los links */
+}
+
+.footer-nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+.help-nav {
+  display: flex;
+  flex-direction: column; /* pone Ayuda arriba y Navegación abajo */
+  gap: 20px; /* separación entre secciones */
+}
+
+.navegacion ul li {
+  margin-bottom: 8px;
+}
+.help-nav {
+  display: flex;
+  gap: 40px; /* distancia horizontal entre Ayuda y Navegación */
+  align-items: flex-start; /* alinea títulos y listas arriba */
+}
+
+.navegacion ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navegacion ul li,
+.ayuda a {
+  margin-bottom: 10px; /* misma distancia entre elementos */
+}
+
+.footer-link {
+  text-decoration: none;
+  color: gray;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}

@@ -62,3 +62,78 @@
     object-fit: cover;     /* recorta sin deformar */
    padding-left: 75px;
   }
+  /* POSICIONAMIENTO FAVORITO */
+.product-card {
+  position: relative;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.fav-btn:hover {
+  background: #ffebee;
+}
+
+/* BOTÓN COMPRAR */
+.buy-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+/* FAVORITO ARRIBA */
+.product-card {
+  position: relative;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.fav-btn:hover {
+  background: #ffebee;
+}
+
+/* FILA DE BOTONES */
+.buttons-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* COMPRAR (más chico) */
+.buy-btn {
+  flex: 1;
+  padding: 8px 0;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* CARRITO */
+.cart-btn {
+  width: 50px;
+  border-radius: 8px;
+}

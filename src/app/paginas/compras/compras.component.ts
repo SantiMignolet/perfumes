@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CompraService } from '../../servicio/compra.service';
 import { RouterModule } from '@angular/router';
+import { CompraService } from '../../servicio/compra.service';
 
 @Component({
   selector: 'app-compras',
@@ -24,7 +24,7 @@ export class ComprasComponent implements OnInit {
   constructor(
     // Servicio encargado de obtener compras desde el backend.
     private compraService: CompraService
-  ) {}
+  ) { }
 
   // Al inicializar el componente, se dispara la carga de compras.
   ngOnInit(): void {
@@ -51,4 +51,3 @@ export class ComprasComponent implements OnInit {
     });
   }
 }
-

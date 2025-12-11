@@ -26,7 +26,13 @@ export const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'novedades', component: NovedadesComponent },
-  {path:'botondearrepentimiento',component:BotonarrepentimientoComponent}
+  { path: 'botondearrepentimiento', component: BotonarrepentimientoComponent },
 
+      {
+    path: 'ticket/:id',
+    loadComponent: () =>
+      import('./paginas/ticket/ticket.component')
+        .then(m => m.TicketComponent)
+  },
 
 ];

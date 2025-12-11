@@ -67,26 +67,17 @@ export class CarritoService {
   // ===============================================================
   // AGREGAR PRODUCTO AL CARRITO
   // ===============================================================
-  agregarAlCarrito(producto: any): Observable<any> {
+agregarAlCarrito(producto: Producto) {
+  const body = {
+    id_producto: producto.id,
+    cantidad: 1,
+    precio_unitario: producto.precio
+  };
 
-    // POST /carrito/agregar
-    return this.http.post<any>(
-      `${this.apiUrl}/agregar`,
-      {
-        id_producto: producto.id,
-        cantidad: 1,
-        precio_unitario: producto.precio
-      },
-      this.getHeaders()
-    ).pipe(
-      tap((r: any) => {
-        // Si la respuesta incluye carrito actualizado, se propaga el cambio.
-        if (r?.carrito) {
-          this.carritoSubject.next(r.carrito);
-        }
-      })
-    );
-  }
+  return this.http.post(`${this.apiUrl}/agregar`, body, this.getHeaders());
+}
+
+
 
   // ===============================================================
   // ACTUALIZAR CANTIDAD DE UN ÍTEM DEL CARRITO

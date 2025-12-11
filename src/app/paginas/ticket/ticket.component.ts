@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TicketService } from '../../servicio/ticket.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { TicketService } from '../../servicio/ticket.service';
 
 @Component({
   selector: 'app-ticket',

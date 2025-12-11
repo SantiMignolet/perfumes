@@ -12,17 +12,34 @@
       </div>
     </div>
 
+    <!-- Ayuda + Navegación -->
+    <!-- Ayuda + Navegación -->
+<div class="col-md-4">
+  <div class="row">
     <!-- Ayuda -->
-    <div class="col-md-4">
+    <div class="col-6" style="padding-right: 70px;">
       <h5>Ayuda</h5>
       <a [routerLink]="['/botondearrepentimiento']" style="text-decoration:none; color: gray;">
-  Botón de Arrepentimiento
-</a>
-
+        Botón de Arrepentimiento
+      </a>
     </div>
 
+    <!-- Navegación -->
+    <div class="col-6" style="padding-left: 50px; ;">
+      <h5>Navegación</h5>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li><a routerLink="/inicio" style="text-decoration:none; color: gray;">Inicio</a></li>
+        <li><a routerLink="/productos" style="text-decoration:none; color: gray;">Productos</a></li>
+        <li><a routerLink="/contacto" style="text-decoration:none; color: gray;">Contacto</a></li>
+        <li><a routerLink="/carrito" style="text-decoration:none; color: gray;">Carrito</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
     <!-- Contacto -->
-    <div class="col-md-4">
+    <div class="col-md-4" style="padding-left: 100px;">
       <h5>Contacto</h5>
       <p class="footer-contact">+54 9 299 123-4567</p>
     </div>
