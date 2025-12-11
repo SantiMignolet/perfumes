@@ -14,6 +14,7 @@
                 <th>Descripción</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
+                <th>Subtotal</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -23,12 +24,9 @@
 
                 <!-- IMAGEN -->
                 <td>
-                    <img
-                        [src]="item.imagen"
-                        alt="{{ item.nombre }}"
-                        class="img-thumbnail"
-                        style="width: 70px; height: 70px;"
-                    >
+                    <img *ngIf="item.imagen"
+                         [src]="'http://localhost/api_proyecto/public/uploads/' + item.imagen"
+                         class="thumb" />
                 </td>
 
                 <!-- NOMBRE -->
@@ -38,7 +36,8 @@
                 <td>{{ item.descripcion }}</td>
 
                 <!-- PRECIO -->
-                <td>${{ item.precio }}</td>
+              <td>${{ item.precio }}</td>
+
 
                 <!-- CANTIDAD -->
                 <td>
@@ -49,12 +48,14 @@
                     </div>
                 </td>
 
+                <!-- SUBTOTAL -->
+                <td>$ {{ item.subtotal }}</td>
+
                 <!-- ELIMINAR -->
                 <td>
                     <button
                         class="btn btn-outline-danger btn-sm"
-                        (click)="eliminar(item.id_detalle_carrito)"
-                    >
+                        (click)="eliminar(item.id_detalle_carrito)">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </td>
@@ -65,7 +66,7 @@
 
     <!-- TOTAL -->
     <div class="text-end mt-4">
-        <h4 class="fw-bold">Total: {{ total }}</h4>
+        <h4 class="fw-bold">Total: ${{ total }}</h4>
 
         <button class="btn btn-primary mt-2" (click)="irACompra()">
             <i class="bi bi-cart-check"></i> Realizar Compra
