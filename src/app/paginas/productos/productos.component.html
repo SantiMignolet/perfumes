@@ -8,14 +8,13 @@
 
       <div class="card">
 
-        <img 
-          [src]="'http://localhost/api_proyecto/public/uploads/' + producto.imagen" 
-          alt="{{ producto.nombre }}" 
+        <img
+          [src]="'http://localhost/api_proyecto/public/uploads/' + producto.imagen"
+          alt="{{ producto.nombre }}"
           class="product-image"
-        >
+        />
 
         <div class="card-body">
-         
 
           <h2 class="card-title">{{ producto.nombre }}</h2>
 
@@ -28,7 +27,6 @@
           </p>
 
           <div class="d-flex justify-content-center align-items-center">
-
             <button
               type="button"
               class="btn btn-outline-primary me-2"
@@ -44,7 +42,6 @@
             >
               <i class="fa-solid fa-heart"></i>
             </button>
-
           </div>
 
         </div>
