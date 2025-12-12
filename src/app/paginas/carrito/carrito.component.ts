@@ -105,4 +105,5 @@ export class CarritoComponent implements OnInit {
   irACompra(): void {
     this.router.navigate(['/compra']);
   }
+  
 }

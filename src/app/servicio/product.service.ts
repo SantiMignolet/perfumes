@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ProductService {
 
   // URL base para todos los endpoints de productos.
-  // Backend tiene rutas como:
+  // Backend tiene rutas como:A
   //   GET    /products
   //   POST   /products
   //   PUT    /products/:id
@@ -105,6 +105,9 @@ getProductosPorCategoria(cat: string) {
   return this.http.get<any[]>(`${this.apiUrl}/categoria/${cat}`);
 }
 getNovedades(): Observable<any[]> {
+  return this.http.get<any[]>(this.apiUrl);
+}
+getMasbuscados(): Observable<any[]> {
   return this.http.get<any[]>(this.apiUrl);
 }
 
